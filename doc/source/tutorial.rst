@@ -24,4 +24,4 @@ To test whether all exported objects have a non-zero docstring, call the :meth:`
     import fsc.export
     fsc.export.test_doc()
 
-    import test # raises AttributeError
+    import test # raises AssertionError
