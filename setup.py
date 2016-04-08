@@ -31,10 +31,14 @@ setup(
     url='http://frescolinogroup.github.io/frescolino/pyexport/' + '.'.join(version.split('.')[:2]),
     include_package_data=True,
     author='C. Frescolino',
+    author_email='frescolino@lists.phys.ethz.ch',
     description=description,
     long_description=readme,
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Topic :: Utilities'
     ],
     license='Apache',
 )
