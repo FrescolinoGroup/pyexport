@@ -28,7 +28,7 @@ setup(
     packages=[
         pkgname_qualified
     ],
-    url='http://frescolinogroup.github.io/frescolino/pyexport/' + '.'.join(version.split('.')[:2])
+    url='http://frescolinogroup.github.io/frescolino/pyexport/' + '.'.join(version.split('.')[:2]),
     include_package_data=True,
     author='C. Frescolino',
     description=description,
