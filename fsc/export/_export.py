@@ -20,7 +20,7 @@ def test_doc(enable=True):
     enable_doc_test = enable
 
 def export(obj):
-    """Adds the decorated object to its module's __all__"""
+    """Adds the decorated object to its module's ``__all__``."""
     mod = importlib.import_module(obj.__module__)
     # add to __all__
     try:

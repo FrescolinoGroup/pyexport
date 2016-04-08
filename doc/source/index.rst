@@ -1,15 +1,14 @@
 pyexport
 ===========
 
-The developer of this module is too lazy to write an introduction. He brings shame and dishonor upon himself and, more importantly, the great C. Frescolino. Let it be known that he shall acquire beers for all frescolino developers to redeem his sins.
+This module contains a decorator to add objects to their module's ``__all__``. Optionally, it can test for the existence of a docstring when importing the module.
 
-Tutorial, Examples and Documentation
-====================================
+Tutorial and Documentation
+==========================
 .. toctree::
     :maxdepth: 2
     
     tutorial.rst
-    examples.rst
     documentation.rst
 
 Indices and tables
