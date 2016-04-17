@@ -19,18 +19,25 @@ def test_doc(enable=True):
     global enable_doc_test
     enable_doc_test = enable
 
-def export(obj):
-    """Adds the decorated object to its module's ``__all__``."""
+def export(obj, name=None):
+    """Adds the decorated object to its module's ``__all__``.
+
+    :param name:    Optional parameter to overwrite the object's name that is written to ``__all__``.
+    :type name: str
+    """
+    if name is None:
+        name = obj.__name__
+
     mod = importlib.import_module(obj.__module__)
     # add to __all__
     try:
-        mod.__all__.append(obj.__name__)
+        mod.__all__.append(name)
     except AttributeError:
-        mod.__all__ = [obj.__name__]
+        mod.__all__ = [name]
 
     # test if the docstring is nonzero
     if enable_doc_test:
         if not obj.__doc__:
-            raise AssertionError("'{}' does not have a non-zero docstring.".format(obj.__name__))
+            raise AssertionError("'{}' does not have a non-zero docstring.".format(name))
 
     return obj
