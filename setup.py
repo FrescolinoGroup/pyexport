@@ -38,6 +38,7 @@ setup(
     extras_require={
         ':python_version < "3"': ['fsc'],
         'test': ['pytest'],
+        'doc': ['sphinx', 'sphinx_rtd_theme'],
     },
     long_description=readme,
     classifiers=[
