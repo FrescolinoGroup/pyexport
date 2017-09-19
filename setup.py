@@ -22,10 +22,6 @@ except IOError:
 
 with open('version.txt', 'r') as f:
     version = f.read().strip()
-    
-requirements = []
-if sys.version_info < (3,):
-    requirements.append('fsc')
 
 setup(
     name=pkgname_qualified,
@@ -38,7 +34,11 @@ setup(
     author='C. Frescolino',
     author_email='frescolino@lists.phys.ethz.ch',
     description=description,
-    install_requires=requirements,
+    install_requires=[],
+    extras_require={
+        ':python_version < "3"': ['fsc'],
+        'test': ['pytest'],
+    },
     long_description=readme,
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
