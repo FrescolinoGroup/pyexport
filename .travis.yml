@@ -3,13 +3,13 @@ cache: pip
 python:
     - "3.6"
     - "3.7"
-    - "3.8"
 
 install:
     - pip install .[test,precommit]
 
 # run tests
 script:
+    - which prospector
     - pre-commit run --all-files
     - cd tests
     - pytest
