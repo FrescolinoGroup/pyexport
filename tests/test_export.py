@@ -4,20 +4,24 @@
 # Author:  Dominik Gresch <greschd@gmx.ch>
 # Date:    08.04.2016 15:05:59 CEST
 # File:    test_export.py
+"""Basic tests for the fsc.export module."""
 
 import pytest
 import fsc.export
+
 
 def test_foo():
     fsc.export.test_doc(False)
     import foo
     assert foo.__all__ == ['foo']
     assert foo.bar.__all__ == ['bar']
-    
+
+
 def test_bar():
     fsc.export.test_doc(True)
     with pytest.raises(AssertionError):
-        import bar
+        import bar  # pylint: disable=unused-import
+
 
 def test_baz():
     fsc.export.test_doc(True)

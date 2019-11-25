@@ -3,6 +3,7 @@
 #
 # Author:  C. Frescolino, D. Gresch
 # File:    __init__.py
+"""Defines a simple helper to populate a module's __all__."""
 
 from ._version import __version__
 

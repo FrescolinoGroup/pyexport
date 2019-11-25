@@ -9,6 +9,7 @@ from fsc.export import export
 
 from . import bar
 
+
 @export
 def foo():
     pass

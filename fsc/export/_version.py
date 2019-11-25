@@ -4,6 +4,7 @@
 # Author:  Dominik Gresch <greschd@gmx.ch>
 # Date:    30.03.2016 12:21:07 CEST
 # File:    _version.py
+"""Defines the module's version."""
 
 import os
 

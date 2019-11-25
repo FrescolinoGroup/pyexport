@@ -26,25 +26,24 @@ with open('version.txt', 'r') as f:
 setup(
     name=pkgname_qualified,
     version=version,
-    packages=[
-        pkgname_qualified
-    ],
+    packages=[pkgname_qualified],
     url='http://frescolinogroup.github.io/frescolino/pyexport/' + '.'.join(version.split('.')[:2]),
     include_package_data=True,
     author='C. Frescolino',
     author_email='frescolino@lists.phys.ethz.ch',
     description=description,
+    python_requires=">=3.6",
     install_requires=[],
     extras_require={
-        ':python_version < "3"': ['fsc'],
         'test': ['pytest'],
         'doc': ['sphinx', 'sphinx_rtd_theme'],
+        'precommit':
+        ['pre-commit==1.20.0', 'prospector==1.1.7', 'pylint==2.3.1', 'yapf==0.28', 'mypy'],
     },
     long_description=readme,
     classifiers=[
-        'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: Apache Software License', 'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6', 'Programming Language :: Python :: 3.7',
         'Topic :: Utilities'
     ],
     license='Apache',

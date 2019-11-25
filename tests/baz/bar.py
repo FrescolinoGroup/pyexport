@@ -7,6 +7,7 @@
 
 from fsc.export import export
 
+
 @export
 def bar():
     """baz.bar.bar"""

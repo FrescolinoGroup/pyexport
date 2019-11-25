@@ -1,0 +1,20 @@
+repos:
+- repo: git://github.com/pre-commit/mirrors-yapf
+  rev: v0.28.0
+  hooks:
+  - id: yapf
+    language: system
+- repo: local
+  hooks:
+  - id: prospector
+    name: prospector
+    entry: prospector
+    types: [file, python]
+    language: system
+    exclude: '^(doc/)|(tests/foo/)|(tests/bar/)|(tests/baz/)'
+  - id: mypy
+    name: Run mypy
+    entry: mypy fsc
+    types: [file, python]
+    language: system
+    pass_filenames: false

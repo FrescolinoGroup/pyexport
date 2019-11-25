@@ -6,3 +6,6 @@ include fsc/export/version.txt
 prune doc
 include doc/description.txt
 include doc/README
+
+# PEP 561 marker file
+include fsc/export/py.typed
