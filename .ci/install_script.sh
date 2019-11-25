@@ -11,7 +11,7 @@ cd ${TRAVIS_BUILD_DIR}
 
 case "$INSTALL_TYPE" in
     test_pypi)
-        pip install fsc.export[test]
+        pip install --pre fsc.export[test]
         ;;
     test_sdist)
         python setup.py sdist
