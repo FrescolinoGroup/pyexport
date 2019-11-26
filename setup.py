@@ -39,12 +39,14 @@ setup(
     extras_require={
         'test': ['pytest'],
         'doc': ['sphinx', 'sphinx_rtd_theme'],
-        'precommit':
-        ['pre-commit==1.20.0', 'prospector==1.1.7', 'pylint==2.3.1', 'yapf==0.28', 'mypy'],
+        'precommit': ['pre-commit==1.20.0'],
     },
-    classifiers=[
-        'License :: OSI Approved :: Apache Software License', 'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6', 'Programming Language :: Python :: 3.7',
+    classifiers=[ # yapf: disable
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Utilities'
     ],
     license='Apache',
