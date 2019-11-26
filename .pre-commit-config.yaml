@@ -11,8 +11,8 @@ repos:
   - id: mypy
     exclude: '^(doc/)|(tests/)'
 
-- repo: git://github.com/guykisel/prospector-mirror
-  rev: 7ff847e779347033ebbd9e3b88279e7f3a998b45
+- repo: https://github.com/PyCQA/prospector
+  rev: 1.1.7
   hooks:
   - id: prospector
     additional_dependencies: ['pytest']
