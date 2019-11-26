@@ -5,7 +5,9 @@
 # Date:    30.03.2016 12:36:11 CEST
 # File:    __init__.py
 
+# pylint: disable=missing-docstring
 
+import typing as _typing
 import pkgutil as _pkgutil
 
-__path__ = _pkgutil.extend_path(__path__, __name__)
+__path__: _typing.Iterable[str] = _pkgutil.extend_path(__path__, __name__)

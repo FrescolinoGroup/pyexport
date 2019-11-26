@@ -1,20 +1,37 @@
 language: python
 cache: pip
-#~ sudo: true
 python:
-    - "2.7"
-    - "3.4"
-    - "3.5"
 
-# if scipy is needed
-#~ before_install:
-    #~ - sudo apt-get update -qq
-    #~ - sudo apt-get install -qq liblapack.so 
+jobs:
+    include:
+    - python: "2.7"
+      env: INSTALL_TYPE="test_pypi" TEST_TYPE="test"
+    - python: "3.5"
+      env: INSTALL_TYPE="test_pypi" TEST_TYPE="test"
+    - python: "3.6"
+      env: INSTALL_TYPE="test_pypi" TEST_TYPE="test"
+    - python: "3.7"
+      env: INSTALL_TYPE="test_pypi" TEST_TYPE="test"
+    - python: "3.8"
+      env: INSTALL_TYPE="test_pypi" TEST_TYPE="test"
+    - python: "3.6"
+      env: INSTALL_TYPE="test_sdist" TEST_TYPE="test"
+    - python: "3.7"
+      env: INSTALL_TYPE="test_sdist" TEST_TYPE="test"
+    - python: "3.8"
+      env: INSTALL_TYPE="test_sdist" TEST_TYPE="test"
+    - python: "3.6"
+      env: INSTALL_TYPE="test" TEST_TYPE="test"
+    - python: "3.7"
+      env: INSTALL_TYPE="test" TEST_TYPE="test"
+    - python: "3.8"
+      env: INSTALL_TYPE="test" TEST_TYPE="test"
+    - python: "3.7"
+      env: INSTALL_TYPE="precommit" TEST_TYPE="precommit"
 
 install:
-    - pip install .
+    - ./.ci/install_script.sh
 
 # run tests
 script:
-    - cd tests 
-    - py.test
+    - ./.ci/test_script.sh
