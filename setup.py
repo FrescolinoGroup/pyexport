@@ -13,7 +13,7 @@ pkgname = 'export'
 pkgname_qualified = 'fsc.' + pkgname
 
 with open('doc/description.txt', 'r') as f:
-    description = f.read()
+    description = f.read().strip()
 try:
     with open('doc/README', 'r') as f:
         readme = f.read()
@@ -34,6 +34,7 @@ setup(
     author='C. Frescolino',
     author_email='frescolino@lists.phys.ethz.ch',
     description=description,
+    python_requires=">=2.7",
     install_requires=[],
     extras_require={
         ':python_version < "3"': ['fsc'],
